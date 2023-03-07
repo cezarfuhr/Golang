@@ -12,5 +12,5 @@ func main() {
 	})
 
 	// inicia o servidor na porta 8080
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":80", nil)
 }
