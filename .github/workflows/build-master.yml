@@ -13,5 +13,5 @@ jobs:
       - name: Build and push image
         run: |
           docker build -t go-api .
-          docker tag go-api registry.codenoobs.xyz/cvfuhr/go-api:v4
-          docker push registry.codenoobs.xyz/cvfuhr/go-api:v4
+          docker tag go-api registry.codenoobs.xyz/cvfuhr/go-api:v5
+          docker push registry.codenoobs.xyz/cvfuhr/go-api:v5
