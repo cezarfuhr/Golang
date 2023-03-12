@@ -24,3 +24,5 @@ jobs:
           docker build -t go-api .
           docker tag go-api:latest registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG
           docker push registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG
+          docker tag registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG registry.codenoobs.xyz/cvfuhr/go-api:latest
+          docker push registry.codenoobs.xyz/cvfuhr/go-api:latest
