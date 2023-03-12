@@ -11,18 +11,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Get the SHA resumed
-        env:
-          GITHUB_SHA: ${{ github.sha }}
-        id: get_commit
-        run: echo ::set-output name=COMMIT::$(echo $GITHUB_SHA | rev | cut -c34- | rev)
+      #- name: Get the SHA resumed
+        #env:
+        #  GITHUB_SHA: ${{ github.sha }}
+        #id: get_commit
+        #run: echo ::set-output name=COMMIT::$(echo $GITHUB_SHA | rev | cut -c34- | rev)
 
       - name: Build and push image
-        env:
-          IMAGE_TAG: go-api-${{ steps.get_commit.outputs.COMMIT }}-prd
+        #env:
+          #IMAGE_TAG: go-api-${{ steps.get_commit.outputs.COMMIT }}-prd
         run: |
           docker build -t go-api .
-          docker tag go-api:latest registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG
-          docker push registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG
-          docker tag registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG registry.codenoobs.xyz/cvfuhr/go-api:latest
+          docker tag go-api:latest registry.codenoobs.xyz/cvfuhr/go-api:latest
           docker push registry.codenoobs.xyz/cvfuhr/go-api:latest
+        #docker tag go-api:latest registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG
+        #docker push registry.codenoobs.xyz/cvfuhr/go-api:$IMAGE_TAG
