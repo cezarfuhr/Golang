@@ -1,0 +1,17 @@
+name: Build and Push Docker Image
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build and push image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: registry.codenoobs.xyz/cvfuhr/go-api:master
