@@ -8,7 +8,7 @@ import (
 func main() {
 	// rota que responde a requisições GET na raiz "/"
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello World version 18!")
+		fmt.Fprintf(w, "Hello World version 20!")
 	})
 
 	// inicia o servidor na porta 8080

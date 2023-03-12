@@ -34,9 +34,9 @@ jobs:
           #username: ${{ secrets.DOCKER_USERNAME }}
           #password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Deploy to Kubernetes
-        uses: dtzar/helm-kubectl@v2.0.0
-        with:
-          env:
-            KUBECONFIG: ${{ secrets.KUBECONFIG }}
-          args: kubectl apply -f deployment.yml
+      #- name: Deploy to Kubernetes
+        #uses: dtzar/helm-kubectl@v2.0.0
+        #with:
+          #env:
+            #KUBECONFIG: ${{ secrets.KUBECONFIG }}
+          #args: kubectl apply -f deployment.yml
